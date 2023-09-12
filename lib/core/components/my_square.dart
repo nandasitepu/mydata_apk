@@ -9,7 +9,6 @@ class MySquare extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(right: 5),
       height: 100,
-      width: 100,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
         border: Border.all(
@@ -17,9 +16,23 @@ class MySquare extends StatelessWidget {
           width: 1,
         ),
       ),
-      child: Image.asset(
-        imageOne,
-        fit: BoxFit.fill,
+      child: Column(
+        children: [
+          Image.asset(
+            imageOne,
+            fit: BoxFit.fill,
+            height: 50,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const Center(
+            child: Text(
+              "UU",
+              style: TextStyle(fontSize: 10),
+            ),
+          ),
+        ],
       ),
     );
   }

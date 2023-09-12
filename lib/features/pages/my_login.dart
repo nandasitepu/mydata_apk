@@ -55,6 +55,7 @@ class _MyLoginState extends State<MyLogin> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.black12,
         appBar: AppBar(
           title: Center(child: Text("M Y - D A T A - ID")),
           elevation: 0,

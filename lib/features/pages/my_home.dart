@@ -31,6 +31,11 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(30),
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: () {},
@@ -46,7 +51,6 @@ class _MyHomeState extends State<MyHome> {
           ),
         ),
         elevation: 0,
-        backgroundColor: Colors.black,
       ),
       drawer: Drawer(
         child: Container(
@@ -74,18 +78,15 @@ class _MyHomeState extends State<MyHome> {
 
             const SizedBox(height: 20),
             // Menu
-            SizedBox(
+            const SizedBox(
               height: 100,
-              child: Expanded(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: const [
-                    MySquare(),
-                    MySquare(),
-                    MySquare(),
-                    MySquare(),
-                  ],
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  MySquare(),
+                  MySquare(),
+                  MySquare(),
+                ],
               ),
             ),
 
@@ -100,14 +101,11 @@ class _MyHomeState extends State<MyHome> {
                   Container(
                     height: 500,
                     color: Colors.deepPurple,
-                    child: const Expanded(
-                      child: ListTile(
-                        leading: Text("Hello"),
-                        title: Text("Berita 01"),
-                        subtitle: Text(
-                            "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. "),
-                        trailing: Text("Goodbye"),
-                      ),
+                    child: const ListTile(
+                      leading: Text("Hello"),
+                      title: Text("Berita 01"),
+                      subtitle: Text("abc"),
+                      trailing: Text("Goodbye"),
                     ),
                   ),
                   Container(
@@ -124,6 +122,51 @@ class _MyHomeState extends State<MyHome> {
             //
             const SizedBox(height: 20),
           ],
+        ),
+      ),
+      bottomNavigationBar: SizedBox(
+        height: 200,
+        child: ClipRRect(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(30.0),
+            topRight: Radius.circular(30.0),
+          ),
+          child: BottomNavigationBar(
+            elevation: 1,
+            backgroundColor: Colors.black,
+            type: BottomNavigationBarType.fixed,
+            fixedColor: Colors.white,
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.cabin_outlined,
+                  color: Colors.white,
+                ),
+                label: "Home",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.assessment,
+                  color: Colors.green,
+                ),
+                label: "List",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.admin_panel_settings_outlined,
+                  color: Colors.blue,
+                ),
+                label: "Settings",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.favorite_border_outlined,
+                  color: Colors.pink,
+                ),
+                label: "Bookmark",
+              ),
+            ],
+          ),
         ),
       ),
     );
