@@ -7,11 +7,31 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(100),
-        child: Container(color: Colors.red),
+    return AppBar(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(20),
+        ),
       ),
+      leading: IconButton(
+        icon: const Icon(Icons.menu_outlined),
+        onPressed: () {},
+      ),
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.account_circle_outlined,
+          ),
+        )
+      ],
+      title: const Center(
+        child: Text(
+          "H . O .  M .  E",
+          style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+        ),
+      ),
+      elevation: 0,
     );
   }
 }
