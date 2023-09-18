@@ -2,8 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mydata_apk/core/components/my_cardmenu.dart';
-import 'package:mydata_apk/core/components/my_square.dart';
+import 'package:mydata_apk/core/components/my_card_menu.dart';
 import 'package:mydata_apk/core/constants.dart';
 import 'package:mydata_apk/core/layouts/my_appbar.dart';
 import 'package:mydata_apk/core/layouts/my_bottomnav.dart';
@@ -26,6 +25,14 @@ class _MyHomeState extends State<MyHome> {
     // getCred();
   }
 
+  List cardMenu = [
+    ["UU", imageOne, Colors.white],
+    ["PP", imageTwo, Colors.white],
+    ["Perpres", imageThree, Colors.white],
+    ["Permen", imageFour, Colors.white],
+    ["Pergub", imageFive, Colors.white],
+    ["Perbup", imageSix, Colors.white],
+  ];
   // Menu Function
   void _menu1() {}
 
@@ -38,7 +45,7 @@ class _MyHomeState extends State<MyHome> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10),
-        child: Column(
+        child: ListView(
           children: [
             Row(
               children: [
@@ -54,60 +61,39 @@ class _MyHomeState extends State<MyHome> {
                 )
               ],
             ),
+            //
 
+            Divider(
+              height: 1,
+              color: Colors.grey,
+            ),
+            SizedBox(height: 20),
             // Menu
-
             Expanded(
-              child: ListView(
-                children: [
-                  Container(
-                    height: 200,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Colors.blue[100],
-                    ),
-                    child: GridView.builder(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 4,
-                      ),
-                      itemCount: 8,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(5),
-                          child: Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.rectangle,
-                              color: Colors.white,
-                              boxShadow: const [
-                                BoxShadow(
-                                  blurRadius: 5,
-                                  spreadRadius: 1,
-                                )
-                              ],
-                            ),
-                            child: Image.asset(imageFive),
-                          ),
-                        );
-                      },
-                    ),
+              child: Container(
+                padding: EdgeInsets.all(10),
+                height: 300,
+                child: GridView.builder(
+                  itemCount: cardMenu.length,
+                  itemBuilder: (context, index) {
+                    return MyCardMenu(
+                      menuTitle: cardMenu[index][0],
+                      imageName: cardMenu[index][1],
+                      menuColor: cardMenu[index][2],
+                    );
+                  },
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
                   ),
-
-                  //
-                  Container(
-                    height: 100,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    height: 100,
-                    color: Colors.green,
-                  ),
-                ],
+                ),
               ),
             ),
             //
             const SizedBox(height: 20),
+            Container(
+              height: 200,
+              color: Colors.amber,
+            )
           ],
         ),
       ),
