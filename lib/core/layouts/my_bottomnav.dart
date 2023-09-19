@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MyBottomNav extends StatelessWidget {
-  const MyBottomNav({super.key});
+  final int currentIndex;
+  final Function(int) onTap;
+
+  const MyBottomNav({
+    super.key,
+    required this.currentIndex,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +19,12 @@ class MyBottomNav extends StatelessWidget {
           topRight: Radius.circular(20.0),
         ),
         child: BottomNavigationBar(
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.white,
+          currentIndex: currentIndex,
+          onTap: onTap,
           backgroundColor: Colors.blue,
           type: BottomNavigationBarType.fixed,
-          fixedColor: Colors.white,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(
@@ -42,7 +52,7 @@ class MyBottomNav extends StatelessWidget {
                 Icons.favorite_border_outlined,
                 color: Colors.white,
               ),
-              label: "Favortie",
+              label: "Favorite",
             ),
           ],
         ),

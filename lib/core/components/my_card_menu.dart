@@ -18,8 +18,7 @@ class MyCardMenu extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            height: 150,
-            margin: const EdgeInsets.all(5),
+            margin: const EdgeInsets.all(10),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,

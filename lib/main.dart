@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:mydata_apk/features/views/homepage.dart';
 import 'package:mydata_apk/features/views/hukum/hukum_list.dart';
-import 'package:mydata_apk/features/views/pages/my_home.dart';
 import 'package:mydata_apk/features/views/pages/my_login.dart';
 
 void main() {
@@ -18,9 +18,9 @@ class MyData extends StatelessWidget {
     return MaterialApp(
       title: 'MyData',
       debugShowCheckedModeBanner: false,
-      home: MyLogin(),
+      home: Homepage(),
       routes: {
-        '/homepage': (context) => const MyHome(),
+        '/homepage': (context) => const Homepage(),
         '/loginpage': (context) => const MyLogin(),
         '/hukum': (context) => const HukumListView(),
         '/hukum/uu': (context) => const MyLogin(),
