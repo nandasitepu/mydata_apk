@@ -7,6 +7,7 @@ import 'package:mydata_apk/features/views/pages/my_favorite.dart';
 import 'package:mydata_apk/features/views/pages/my_home.dart';
 import 'package:mydata_apk/features/views/pages/my_list.dart';
 import 'package:mydata_apk/features/views/pages/my_setting.dart';
+import 'package:mydata_apk/features/views/pages/my_test.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -16,7 +17,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  int _selectedIndex = 3;
+  int _selectedIndex = 2;
   //
   void _navigateBottomBar(int index) {
     setState(() {
@@ -28,7 +29,8 @@ class _HomepageState extends State<Homepage> {
   final _pages = [
     MyHome(),
     MyList(),
-    MySetting(),
+    // MySetting(),
+    MyTest(),
     MyFavorite(),
   ];
 

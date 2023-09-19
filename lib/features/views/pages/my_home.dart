@@ -37,90 +37,91 @@ class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
       padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10),
-      child: ListView(
+      child: Column(
         children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: 30,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+          Expanded(
+            child: ListView(
               children: [
-                Text(
-                  "MY",
-                  style: GoogleFonts.bebasNeue(fontSize: 36),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      "MY",
+                      style: GoogleFonts.bebasNeue(fontSize: 36),
+                    ),
+                    Text(
+                      "DATA",
+                      style: GoogleFonts.agdasima(
+                        fontSize: 24,
+                      ),
+                    ),
+                    Text(
+                      " |   Hukum Indonesia",
+                      style: GoogleFonts.agdasima(
+                        fontSize: 24,
+                      ),
+                    ),
+                    Icon(
+                      Icons.search_outlined,
+                      size: 40,
+                      color: Colors.blue,
+                    ),
+                  ],
                 ),
-                Text(
-                  "DATA",
-                  style: GoogleFonts.agdasima(
-                    fontSize: 24,
-                  ),
-                ),
-                Text(
-                  " | Hukum Indonesia",
-                  style: GoogleFonts.agdasima(
-                    fontSize: 24,
-                  ),
-                ),
-                Icon(
-                  Icons.search_outlined,
-                  size: 32,
+                //
+
+                Divider(
+                  thickness: 2,
                   color: Colors.blue,
                 ),
+
+                //Menu
+                Container(
+                  height: 250,
+                  padding: EdgeInsets.all(5),
+                  child: GridView.builder(
+                    itemCount: cardMenu.length,
+                    itemBuilder: (context, index) {
+                      return MyCardMenu(
+                        menuTitle: cardMenu[index][0],
+                        imageName: cardMenu[index][1],
+                        menuColor: cardMenu[index][2],
+                      );
+                    },
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                    ),
+                  ),
+                ),
+
+                Divider(
+                  thickness: 2,
+                  color: Colors.blue,
+                ),
+                //Peraturan Terbaru
+                Center(
+                  child: Text(
+                    "Peraturan Populer",
+                    style: GoogleFonts.bebasNeue(fontSize: 36),
+                  ),
+                ),
+                //List Peraturan
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.7,
+                  child: ListView(
+                    children: const [
+                      MyCardPopuler(),
+                      MyCardPopuler(),
+                      MyCardPopuler(),
+                      MyCardPopuler(),
+                      MyCardPopuler(),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
-          //
-
-          Divider(
-            thickness: 2,
-            color: Colors.blue,
-          ),
-
-          //Menu
-          Container(
-            height: 250,
-            padding: EdgeInsets.all(5),
-            child: GridView.builder(
-              itemCount: cardMenu.length,
-              itemBuilder: (context, index) {
-                return MyCardMenu(
-                  menuTitle: cardMenu[index][0],
-                  imageName: cardMenu[index][1],
-                  menuColor: cardMenu[index][2],
-                );
-              },
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-              ),
-            ),
-          ),
-
-          Divider(
-            thickness: 2,
-            color: Colors.blue,
-          ),
-          //Peraturan Terbaru
-          Center(
-            child: Text(
-              "Peraturan Populer",
-              style: GoogleFonts.bebasNeue(fontSize: 36),
-            ),
-          ),
-          //List Peraturan
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.7,
-            child: ListView(
-              children: const [
-                MyCardPopuler(),
-                MyCardPopuler(),
-                MyCardPopuler(),
-                MyCardPopuler(),
-                MyCardPopuler(),
-              ],
-            ),
-          )
         ],
       ),
     );
