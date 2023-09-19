@@ -16,26 +16,27 @@ class MyCardMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          height: 150,
-          margin: EdgeInsets.all(5),
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            shape: BoxShape.rectangle,
-            color: menuColor,
-            boxShadow: const [
-              BoxShadow(
-                blurRadius: 1,
-                spreadRadius: 1,
-              )
-            ],
-          ),
-          child: Image.asset(
-            imageName,
-            fit: BoxFit.contain,
+        Expanded(
+          child: Container(
+            height: 150,
+            margin: const EdgeInsets.all(5),
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              shape: BoxShape.rectangle,
+              color: menuColor,
+              boxShadow: const [
+                BoxShadow(
+                  blurRadius: 1,
+                  spreadRadius: 1,
+                )
+              ],
+            ),
+            child: Image.asset(
+              imageName,
+              fit: BoxFit.contain,
+            ),
           ),
         ),
-        const SizedBox(height: 10),
         Text(menuTitle),
       ],
     );
