@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  final String text;
+  final Widget text;
 
   const MyAppBar({super.key, required this.text});
 
@@ -23,13 +23,16 @@ class MyAppBar extends StatelessWidget {
           icon: const Icon(
             Icons.account_circle_outlined,
           ),
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.account_circle_outlined,
+          ),
         )
       ],
-      title: const Center(
-        child: Text(
-          "H . O .  M .  E",
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-        ),
+      title: Center(
+        child: text,
       ),
       elevation: 0,
     );

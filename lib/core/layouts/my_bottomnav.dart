@@ -19,14 +19,15 @@ class MyBottomNav extends StatelessWidget {
           topRight: Radius.circular(20.0),
         ),
         child: BottomNavigationBar(
-          selectedItemColor: Colors.black,
+          selectedItemColor: Colors.yellow.shade200,
           unselectedItemColor: Colors.white,
+          selectedFontSize: 16.0,
           currentIndex: currentIndex,
           onTap: onTap,
           backgroundColor: Colors.blue,
           type: BottomNavigationBarType.fixed,
-          items: const [
-            BottomNavigationBarItem(
+          items: [
+            const BottomNavigationBarItem(
               icon: Icon(
                 Icons.cabin_outlined,
                 color: Colors.white,
@@ -35,22 +36,22 @@ class MyBottomNav extends StatelessWidget {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.assessment,
-                color: Colors.white,
+                Icons.graphic_eq,
+                color: Colors.grey.shade300,
               ),
               label: "List",
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(
                 Icons.admin_panel_settings_outlined,
-                color: Colors.white,
+                color: Colors.black,
               ),
               label: "Settings",
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(
-                Icons.favorite_border_outlined,
-                color: Colors.white,
+                Icons.favorite,
+                color: Colors.red,
               ),
               label: "Favorite",
             ),

@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:mydata_apk/features/views/homepage.dart';
 import 'package:mydata_apk/features/views/hukum/hukum_list.dart';
-import 'package:mydata_apk/features/views/pages/my_login.dart';
+import 'package:mydata_apk/features/views/bottom_nav/my_login.dart';
 
 void main() {
   runApp(MyData());
@@ -23,7 +23,6 @@ class MyData extends StatelessWidget {
         '/homepage': (context) => const Homepage(),
         '/loginpage': (context) => const MyLogin(),
         '/hukum': (context) => const HukumListView(),
-        '/hukum/uu': (context) => const MyLogin(),
       },
     );
   }

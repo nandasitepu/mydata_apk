@@ -25,12 +25,12 @@ class _MyHomeState extends State<MyHome> {
   }
 
   List cardMenu = [
-    ["UU", imageOne, Colors.white],
-    ["PP", imageTwo, Colors.white],
-    ["Perpres", imageThree, Colors.white],
-    ["Permen", imageFour, Colors.white],
-    ["Pergub", imageFive, Colors.white],
-    ["Perbup", imageSix, Colors.white],
+    ["UU", imageOne, Colors.white, '/hukum'],
+    ["PP", imageTwo, Colors.white, '/hukum'],
+    ["Perpres", imageThree, Colors.white, '/hukum'],
+    ["Permen", imageFour, Colors.white, '/hukum'],
+    ["Pergub", imageFive, Colors.white, '/hukum'],
+    ["Perbup", imageSix, Colors.white, '/hukum'],
   ];
 
   //
@@ -64,7 +64,7 @@ class _MyHomeState extends State<MyHome> {
                     ),
                     Icon(
                       Icons.search_outlined,
-                      size: 40,
+                      size: 32,
                       color: Colors.blue,
                     ),
                   ],
@@ -87,6 +87,7 @@ class _MyHomeState extends State<MyHome> {
                         menuTitle: cardMenu[index][0],
                         imageName: cardMenu[index][1],
                         menuColor: cardMenu[index][2],
+                        link: cardMenu[index][3],
                       );
                     },
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
