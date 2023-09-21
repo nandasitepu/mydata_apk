@@ -43,31 +43,34 @@ class _MyHomeState extends State<MyHome> {
           Expanded(
             child: ListView(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      "MY",
-                      style: GoogleFonts.bebasNeue(fontSize: 36),
-                    ),
-                    Text(
-                      "DATA",
-                      style: GoogleFonts.agdasima(
-                        fontSize: 24,
+                Container(
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        "MY",
+                        style: GoogleFonts.bebasNeue(fontSize: 36),
                       ),
-                    ),
-                    Text(
-                      " |   Hukum Indonesia",
-                      style: GoogleFonts.agdasima(
-                        fontSize: 24,
+                      Text(
+                        "DATA",
+                        style: GoogleFonts.agdasima(
+                          fontSize: 24,
+                        ),
                       ),
-                    ),
-                    Icon(
-                      Icons.search_outlined,
-                      size: 32,
-                      color: Colors.blue,
-                    ),
-                  ],
+                      Text(
+                        "  |  Hukum Indonesia",
+                        style: GoogleFonts.agdasima(
+                          fontSize: 24,
+                        ),
+                      ),
+                      Icon(
+                        Icons.search_outlined,
+                        size: 32,
+                        color: Colors.blue,
+                      ),
+                    ],
+                  ),
                 ),
                 //
 
