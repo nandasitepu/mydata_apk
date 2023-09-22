@@ -55,7 +55,7 @@ class _MyLoginState extends State<MyLogin> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.black12,
+        backgroundColor: Colors.blue,
         appBar: AppBar(
           title: Center(child: Text("M Y - D A T A - ID")),
           elevation: 0,
@@ -67,14 +67,9 @@ class _MyLoginState extends State<MyLogin> {
               const SizedBox(height: 50),
               Image.asset(
                 height: 100,
-                imageOne,
+                imageLoginPage,
               ),
-              // logo
-              // const Icon(
-              //   Icons.lock,
-              //   size: 30,
-              //   color: Colors.grey,
-              // ),
+
               const SizedBox(height: 20),
               // Sign In
               Text(
@@ -124,14 +119,19 @@ class _MyLoginState extends State<MyLogin> {
                     Expanded(
                       child: MyButton(
                         onTap: () {},
-                        backgroundColor: Colors.grey,
+                        backgroundColor: Colors.white70,
                         text: "Register",
                         fontSize: 16,
                       ),
                     )
                   ],
                 ),
-              )
+              ),
+              Divider(
+                thickness: 2,
+                height: 50,
+                color: Colors.white,
+              ),
             ]),
           ),
         ),

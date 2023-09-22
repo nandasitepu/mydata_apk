@@ -16,3 +16,4 @@ var imageFive = 'lib/core/assets/images/book.png';
 var imageSix = 'lib/core/assets/images/cyberspace.png';
 
 // Images for References
+var imageLoginPage = 'lib/core/assets/images/cyberspace.png';

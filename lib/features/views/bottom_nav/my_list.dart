@@ -109,7 +109,16 @@ class MyList extends StatelessWidget {
                       } else {
                         return const Center(
                           child: Center(
-                            child: CircularProgressIndicator(),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(30.0),
+                                  child: CircularProgressIndicator(),
+                                ),
+                                SizedBox(height: 40),
+                                Expanded(child: Text("Loading Data")),
+                              ],
+                            ),
                           ),
                         );
                       }

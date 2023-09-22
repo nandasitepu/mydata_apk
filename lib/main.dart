@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:mydata_apk/features/views/homepage.dart';
 import 'package:mydata_apk/features/views/hukum/hukum_list.dart';
-import 'package:mydata_apk/features/views/bottom_nav/my_login.dart';
+import 'package:mydata_apk/features/views/my_login.dart';
 
 void main() {
   // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();

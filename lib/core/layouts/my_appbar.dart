@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mydata_apk/features/views/homepage.dart';
 
 class MyAppBar extends StatelessWidget {
   final Widget text;
@@ -14,22 +15,20 @@ class MyAppBar extends StatelessWidget {
         ),
       ),
       leading: IconButton(
-        icon: const Icon(Icons.menu_outlined),
-        onPressed: () {},
+        onPressed: () {
+          scaffoldKey.currentState?.openDrawer();
+        },
+        icon: const Icon(Icons.view_list),
       ),
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            scaffoldKey.currentState?.openEndDrawer();
+          },
           icon: const Icon(
             Icons.account_circle_outlined,
           ),
         ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.account_circle_outlined,
-          ),
-        )
       ],
       title: Center(
         child: text,
