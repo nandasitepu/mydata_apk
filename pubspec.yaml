@@ -37,12 +37,14 @@ dependencies:
   http: ^1.1.0
   shared_preferences:
   google_fonts:
+  google_sign_in: ^6.1.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_native_splash:
   flutter_launcher_icons: ^0.13.1
+  change_app_package_name: ^1.0.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -91,10 +93,7 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 
-  
-
 flutter_native_splash:
-
   # This package generates native code to customize Flutter's default white native splash screen
   # with background color and splash image.
   # Customize the parameters below, and run the following command in the terminal:
@@ -233,7 +232,6 @@ flutter_native_splash:
   #  - 'ios/Runner/Info-Debug.plist'
   #  - 'ios/Runner/Info-Release.plist'
 
-
 ###
 
 flutter_launcher_icons:
@@ -253,5 +251,3 @@ flutter_launcher_icons:
   macos:
     generate: true
     image_path: "lib/core/assets/images/cyberspace.png"
-  
-  

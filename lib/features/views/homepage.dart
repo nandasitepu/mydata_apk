@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mydata_apk/core/components/my_popupmenu.dart';
 import 'package:mydata_apk/core/layouts/my_appbar.dart';
 import 'package:mydata_apk/core/layouts/my_bottomnav.dart';
 import 'package:mydata_apk/core/layouts/my_drawer.dart';
-import 'package:mydata_apk/core/layouts/my_end_drawer.dart';
-import 'package:mydata_apk/features/views/bottom_nav/my_favorite.dart';
-import 'package:mydata_apk/features/views/bottom_nav/my_home.dart';
-import 'package:mydata_apk/features/views/bottom_nav/my_list.dart';
-import 'package:mydata_apk/features/views/bottom_nav/my_setting.dart';
+import 'package:mydata_apk/features/views/tab/my_favorite.dart';
+import 'package:mydata_apk/features/views/tab/my_home.dart';
+import 'package:mydata_apk/features/views/tab/my_list.dart';
+import 'package:mydata_apk/features/views/tab/my_setting.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -57,7 +57,7 @@ class _HomepageState extends State<Homepage> {
         onTap: _navigateBottomBar,
       ),
       drawer: MyDrawer(),
-      endDrawer: MyEndDrawer(),
+      endDrawer: MyPopUpMenu(),
     );
   }
 }

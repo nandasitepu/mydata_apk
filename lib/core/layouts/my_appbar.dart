@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mydata_apk/core/components/my_popupmenu.dart';
 import 'package:mydata_apk/features/views/homepage.dart';
 
 class MyAppBar extends StatelessWidget {
@@ -20,15 +21,8 @@ class MyAppBar extends StatelessWidget {
         },
         icon: const Icon(Icons.view_list),
       ),
-      actions: [
-        IconButton(
-          onPressed: () {
-            scaffoldKey.currentState?.openEndDrawer();
-          },
-          icon: const Icon(
-            Icons.account_circle_outlined,
-          ),
-        ),
+      actions: const [
+        MyPopUpMenu(),
       ],
       title: Center(
         child: text,

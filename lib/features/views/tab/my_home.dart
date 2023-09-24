@@ -43,36 +43,32 @@ class _MyHomeState extends State<MyHome> {
           Expanded(
             child: ListView(
               children: [
-                Container(
-                  color: Colors.transparent,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        "MY",
-                        style: GoogleFonts.bebasNeue(fontSize: 36),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      "MY",
+                      style: GoogleFonts.bebasNeue(fontSize: 24),
+                    ),
+                    Text(
+                      "DATA",
+                      style: GoogleFonts.agdasima(
+                        fontSize: 24,
                       ),
-                      Text(
-                        "DATA",
-                        style: GoogleFonts.agdasima(
-                          fontSize: 24,
-                        ),
+                    ),
+                    Text(
+                      "  |  Hukum Indonesia",
+                      style: GoogleFonts.agdasima(
+                        fontSize: 24,
                       ),
-                      Text(
-                        "  |  Hukum Indonesia",
-                        style: GoogleFonts.agdasima(
-                          fontSize: 24,
-                        ),
-                      ),
-                      Icon(
-                        Icons.search_outlined,
-                        size: 32,
-                        color: Colors.blue,
-                      ),
-                    ],
-                  ),
+                    ),
+                    Icon(
+                      Icons.search_outlined,
+                      size: 24,
+                      color: Colors.blue,
+                    ),
+                  ],
                 ),
-                //
 
                 Divider(
                   thickness: 2,

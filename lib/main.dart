@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:mydata_apk/features/views/homepage.dart';
 import 'package:mydata_apk/features/views/hukum/hukum_list.dart';
-import 'package:mydata_apk/features/views/my_login.dart';
+import 'package:mydata_apk/features/views/loginpage.dart';
 
 void main() {
   // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -22,11 +22,12 @@ class MyData extends StatelessWidget {
     return MaterialApp(
       title: 'MyData',
       debugShowCheckedModeBanner: false,
-      home: Homepage(),
+      home: MyLogin(),
       routes: {
         '/homepage': (context) => const Homepage(),
         '/loginpage': (context) => const MyLogin(),
         '/hukum': (context) => const HukumListView(),
+        '/logout': (context) => const MyLogin(),
       },
     );
   }

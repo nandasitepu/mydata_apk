@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:mydata_apk/core/components/my_button.dart';
 import 'package:mydata_apk/core/components/my_textfield.dart';
 import 'package:mydata_apk/core/constants.dart';
+import 'package:mydata_apk/features/controllers/auth/google_login_ctrl.dart';
+import 'package:mydata_apk/features/views/welcomepage.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:http/http.dart' as http;
 
@@ -23,32 +25,20 @@ class _MyLoginState extends State<MyLogin> {
 
   void login() async {
     Navigator.popAndPushNamed(context, "/homepage");
+  }
 
-    // if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
-    //   var response = await http.post(Uri.parse("https://reqres.in/api/login"),
-    //       body: ({
-    //         "email": emailController.text,
-    //         "password": passwordController.text,
-    //       }));
-    //   if (response.statusCode == 200) {
-    //     final body = jsonDecode(response.body);
-    //     if (!context.mounted) return;
-    //     ScaffoldMessenger.of(context)
-    //         .showSnackBar(SnackBar(content: Text("Token: ${body['token']}")));
+  Future gSignIn() async {
+    await MyGogleSignIn.mylogin();
+    final user = await MyGogleSignIn.mylogin();
 
-    //     SharedPreferences pref = await SharedPreferences.getInstance();
-    //     await pref.setString("login", body['token']);
-    //     if (!context.mounted) return;
-    //     Navigator.popAndPushNamed(context, "/homepage");
-    //   } else {
-    //     if (!context.mounted) return;
-    //     ScaffoldMessenger.of(context)
-    //         .showSnackBar(SnackBar(content: Text("Invalid Credetials")));
-    //   }
-    // } else {
-    //   ScaffoldMessenger.of(context)
-    //       .showSnackBar(SnackBar(content: Text("Blank Value Form")));
-    // }
+    if (user == null) {
+      return SnackBar(content: Text("Sign In Failed"));
+    } else {
+      if (context.mounted) {
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => MyWelcome(user: user)));
+      }
+    }
   }
 
   @override
@@ -132,6 +122,26 @@ class _MyLoginState extends State<MyLogin> {
                 height: 50,
                 color: Colors.white,
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 100),
+                child: ElevatedButton(
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.white),
+                    onPressed: gSignIn,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: const [
+                        Icon(
+                          Icons.login_outlined,
+                          color: Colors.red,
+                        ),
+                        Text(
+                          "Sign In With Google",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ],
+                    )),
+              )
             ]),
           ),
         ),

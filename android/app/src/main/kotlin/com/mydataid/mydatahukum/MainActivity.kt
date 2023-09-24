@@ -1,4 +1,4 @@
-package com.example.mydata_apk
+package com.mydataid.mydatahukum
 
 import io.flutter.embedding.android.FlutterActivity
 
