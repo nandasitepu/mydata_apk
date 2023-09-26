@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:mydata_apk/features/controllers/google_login_ctrl.dart';
+import 'package:mydata_apk/features/controllers/auth/google_login_ctrl.dart';
 
 class MyWelcome extends StatelessWidget {
   final GoogleSignInAccount user;
