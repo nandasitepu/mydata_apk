@@ -97,7 +97,7 @@ class MyList extends StatelessWidget {
                           children: [
                             Expanded(
                               child: ListView.builder(
-                                  reverse: true,
+                                  reverse: false,
                                   itemCount: peraturan.length,
                                   itemBuilder:
                                       (BuildContext context, int index) {
