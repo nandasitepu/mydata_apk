@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MyHukumList extends StatelessWidget {
-  const MyHukumList({super.key});
+class MyHukumSearch extends StatelessWidget {
+  const MyHukumSearch({super.key});
 
   @override
   Widget build(BuildContext context) {

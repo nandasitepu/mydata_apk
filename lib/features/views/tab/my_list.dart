@@ -96,7 +96,15 @@ class MyList extends StatelessWidget {
                         return Column(
                           children: [
                             Expanded(
-                              child: ListView.builder(
+                              child: ListView.separated(
+                                  separatorBuilder:
+                                      (BuildContext context, int index) {
+                                    return const Divider(
+                                      height: 10,
+                                      thickness: 1,
+                                      color: Colors.blue,
+                                    );
+                                  },
                                   reverse: false,
                                   itemCount: peraturan.length,
                                   itemBuilder:

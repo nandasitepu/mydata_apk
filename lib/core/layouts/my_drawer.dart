@@ -26,7 +26,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 ),
               ),
               onTap: () {
-                Navigator.of(context).pop();
+                Navigator.popAndPushNamed(context, "/homepage");
               },
             ),
             ListTile(
