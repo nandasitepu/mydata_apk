@@ -17,7 +17,12 @@ Future getPeraturan() async {
   peraturan.clear();
   // loop data in array
   for (var p in jsonData['values']) {
-    final data = Peraturan(id: p[0], nomor: p[1], uraian: p[2], link: p[3]);
+    final data = Peraturan(
+      id: p[0],
+      nomor: p[1],
+      uraian: p[2],
+      link: p[3],
+    );
 
     peraturan.add(data);
   }

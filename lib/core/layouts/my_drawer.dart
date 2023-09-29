@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MyDrawer extends StatelessWidget {
+class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
 
+  @override
+  State<MyDrawer> createState() => _MyDrawerState();
+}
+
+class _MyDrawerState extends State<MyDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -11,7 +16,6 @@ class MyDrawer extends StatelessWidget {
         color: Colors.blue[400],
         padding: const EdgeInsets.all(40),
         child: Column(
-          mainAxisSize: MainAxisSize.max,
           children: [
             ListTile(
               title: Text(
@@ -62,68 +66,6 @@ class MyDrawer extends StatelessWidget {
               trailing: const Icon(
                 Icons.menu_book,
                 color: Colors.white,
-              ),
-            ),
-            Expanded(
-              flex: 5,
-              child: Container(
-                height: MediaQuery.of(context).size.height * 0.3,
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                decoration: const BoxDecoration(
-                  color: Colors.transparent,
-                ),
-                child: Expanded(
-                  flex: 6,
-                  child: ListView(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 10),
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: Colors.yellow.shade100,
-                          border: Border.all(color: Colors.black),
-                        ),
-                        child: const Text("UU"),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 10),
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: Colors.yellow.shade100,
-                          border: Border.all(color: Colors.black),
-                        ),
-                        child: const Text("PP"),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 10),
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: Colors.yellow.shade100,
-                          border: Border.all(color: Colors.black),
-                        ),
-                        child: const Text("Perpres"),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 10),
-                        padding: const EdgeInsets.all(5),
-                        color: Colors.white,
-                        child: const Text("Permen"),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 10),
-                        padding: const EdgeInsets.all(10),
-                        color: Colors.white,
-                        child: const Text("Pergub"),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 10),
-                        padding: const EdgeInsets.all(10),
-                        color: Colors.white,
-                        child: const Text("Perbub"),
-                      ),
-                    ],
-                  ),
-                ),
               ),
             ),
             const Align(
