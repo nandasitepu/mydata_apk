@@ -18,32 +18,42 @@ class MyCardMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, link);
+        Navigator.popAndPushNamed(context, link);
       },
-      child: Column(
-        children: [
-          Expanded(
-            child: Container(
-              margin: const EdgeInsets.all(10),
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                color: menuColor,
-                boxShadow: const [
-                  BoxShadow(
-                    blurRadius: 1,
-                    spreadRadius: 1,
-                  )
-                ],
-              ),
-              child: Image.asset(
-                imageName,
-                fit: BoxFit.contain,
+      child: Center(
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                margin: const EdgeInsets.all(5),
+                padding: const EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  color: menuColor,
+                  boxShadow: const [
+                    BoxShadow(
+                      blurRadius: 1,
+                      spreadRadius: 1,
+                    )
+                  ],
+                ),
+                child: Image.asset(
+                  imageName,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
-          ),
-          Text(menuTitle),
-        ],
+            Container(
+                color: Colors.transparent,
+                height: 50,
+                padding: const EdgeInsets.all(5),
+                child: Text(
+                  menuTitle,
+                  style: const TextStyle(fontSize: 15),
+                  textAlign: TextAlign.center,
+                )),
+          ],
+        ),
       ),
     );
   }

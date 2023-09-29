@@ -25,12 +25,12 @@ class _MyHomeState extends State<MyHome> {
   }
 
   List cardMenu = [
-    ["UU", imageOne, Colors.white, '/hukum'],
-    ["PP", imageTwo, Colors.white, '/hukum'],
-    ["Perpres", imageThree, Colors.white, '/hukum'],
-    ["Permen", imageFour, Colors.white, '/hukum'],
-    ["Pergub", imageFive, Colors.white, '/hukum'],
-    ["Perbup", imageSix, Colors.white, '/hukum'],
+    ["Undang - Undang", imageOne, Colors.white, '/hukum'],
+    ["Peraturan Pemerintah", imageTwo, Colors.white, '/hukum'],
+    ["Peraturan Presiden", imageThree, Colors.white, '/hukum'],
+    ["Peraturan Menteri", imageFour, Colors.white, '/hukum'],
+    ["Peraturan Gubernur", imageFive, Colors.white, '/hukum'],
+    ["Peraturan Bupati", imageSix, Colors.white, '/hukum'],
   ];
 
   //
@@ -44,28 +44,24 @@ class _MyHomeState extends State<MyHome> {
             child: ListView(
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "MY",
-                      style: GoogleFonts.bebasNeue(fontSize: 24),
-                    ),
-                    Text(
-                      "DATA",
+                      " Peraturan Hukum Indonesia ",
                       style: GoogleFonts.agdasima(
-                        fontSize: 24,
+                        fontSize: 20,
                       ),
                     ),
-                    Text(
-                      "  |  Hukum Indonesia",
-                      style: GoogleFonts.agdasima(
-                        fontSize: 24,
+                    Spacer(),
+                    IconButton(
+                      icon: Icon(
+                        Icons.search_outlined,
+                        size: 30,
+                        color: Colors.blue,
                       ),
-                    ),
-                    Icon(
-                      Icons.search_outlined,
-                      size: 24,
-                      color: Colors.blue,
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/uu");
+                      },
                     ),
                   ],
                 ),

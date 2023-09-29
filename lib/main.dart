@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:mydata_apk/features/views/homepage.dart';
-import 'package:mydata_apk/features/views/hukum/hukum_list.dart';
+
+import 'package:mydata_apk/features/views/hukum/my_hukum.dart';
 import 'package:mydata_apk/features/views/loginpage.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyData extends StatelessWidget {
       routes: {
         '/homepage': (context) => const Homepage(),
         '/loginpage': (context) => const MyLogin(),
-        '/hukum': (context) => const HukumListView(),
+        '/hukum': (context) => const MyHukum(),
         '/logout': (context) => const MyLogin(),
       },
     );

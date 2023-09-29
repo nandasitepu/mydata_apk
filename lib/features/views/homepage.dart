@@ -45,9 +45,18 @@ class _HomepageState extends State<Homepage> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50),
         child: MyAppBar(
-          text: Text(
-            "MY DATA | Hukum",
-            style: GoogleFonts.pacifico(fontSize: 22),
+          text: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "MYDATA",
+                style: GoogleFonts.bebasNeue(fontSize: 32),
+              ),
+              Text(
+                " - Hukum",
+                style: GoogleFonts.agdasima(fontSize: 24),
+              ),
+            ],
           ),
         ),
       ),
