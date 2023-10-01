@@ -1,46 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:mydata_apk/core/components/my_popupmenu.dart';
+import 'package:mydata_apk/core/layouts/my_drawer.dart';
+import 'package:mydata_apk/features/views/tab/my_list.dart';
 
-class MyHukumList extends StatelessWidget {
-  const MyHukumList({super.key});
+class HukumIndex extends StatelessWidget {
+  const HukumIndex({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            //Search
-            Container(
-              color: Colors.grey,
-              padding: const EdgeInsets.all(20),
-              child: const SearchBar(
-                hintText: "Search",
-                trailing: [Icon(Icons.search)],
-              ),
-            ),
-            // Terbaru
-            Container(
-              padding: const EdgeInsets.all(20),
-              height: 500,
-              decoration: const BoxDecoration(
-                color: Colors.red,
-              ),
-              child: ListView(),
-            ),
-
-            // Populer
-            Container(
-              padding: const EdgeInsets.all(20),
-              height: 500,
-              decoration: const BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: ListView(),
-            ),
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Center(child: Text("Peraturan Hukum Indonesia")),
       ),
+      body: const MyList(),
+      drawer: const MyDrawer(),
+      endDrawer: const MyPopUpMenu(),
     );
   }
 }

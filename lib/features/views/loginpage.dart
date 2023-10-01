@@ -3,6 +3,7 @@
 // import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mydata_apk/core/components/my_button.dart';
 import 'package:mydata_apk/core/components/my_textfield.dart';
 import 'package:mydata_apk/core/constants.dart';
@@ -24,7 +25,7 @@ class _MyLoginState extends State<MyLogin> {
   final passwordController = TextEditingController();
 
   void login() async {
-    Navigator.popAndPushNamed(context, "/homepage");
+    context.go('/homepage');
   }
 
   Future gSignIn() async {

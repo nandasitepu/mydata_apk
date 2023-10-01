@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MyPopUpMenu extends StatefulWidget {
   const MyPopUpMenu({super.key});
@@ -21,7 +22,7 @@ class _MyPopUpMenuState extends State<MyPopUpMenu> {
         offset: const Offset(0, 50),
         itemBuilder: (context) => const [
               PopupMenuItem(
-                value: "/loginpage",
+                value: "/login",
                 child: Text(
                   "Profile",
                   style: TextStyle(color: Colors.white),
@@ -39,8 +40,7 @@ class _MyPopUpMenuState extends State<MyPopUpMenu> {
           setState(() {
             selectedMenu = value;
           });
-
-          Navigator.popAndPushNamed(context, value);
+          context.go(value);
         });
   }
 }

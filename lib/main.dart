@@ -1,10 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:mydata_apk/features/views/homepage.dart';
-
-import 'package:mydata_apk/features/views/hukum/my_hukum.dart';
-import 'package:mydata_apk/features/views/loginpage.dart';
+import 'package:mydata_apk/core/routes.dart';
 
 void main() {
   // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -20,16 +17,8 @@ class MyData extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'MyData',
-      debugShowCheckedModeBanner: false,
-      home: MyLogin(),
-      routes: {
-        '/homepage': (context) => const Homepage(),
-        '/loginpage': (context) => const MyLogin(),
-        '/hukum': (context) => const MyHukum(),
-        '/logout': (context) => const MyLogin(),
-      },
+    return MaterialApp.router(
+      routerConfig: router,
     );
   }
 }

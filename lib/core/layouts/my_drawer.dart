@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyDrawer extends StatefulWidget {
@@ -26,7 +27,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 ),
               ),
               onTap: () {
-                Navigator.popAndPushNamed(context, "/homepage");
+                context.go('/homepage');
               },
             ),
             ListTile(

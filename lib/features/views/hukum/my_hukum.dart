@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mydata_apk/core/layouts/my_drawer.dart';
 import 'package:mydata_apk/features/views/hukum/hukum_body.dart';
-import 'package:mydata_apk/features/views/hukum/hukum_index.dart';
 
 class MyHukum extends StatefulWidget {
   const MyHukum({super.key});

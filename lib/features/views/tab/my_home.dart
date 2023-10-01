@@ -25,12 +25,12 @@ class _MyHomeState extends State<MyHome> {
   }
 
   List cardMenu = [
-    ["Undang - Undang", imageOne, Colors.white, '/hukum'],
-    ["Peraturan Pemerintah", imageTwo, Colors.white, '/hukum'],
-    ["Peraturan Presiden", imageThree, Colors.white, '/hukum'],
-    ["Peraturan Menteri", imageFour, Colors.white, '/hukum'],
-    ["Peraturan Gubernur", imageFive, Colors.white, '/hukum'],
-    ["Peraturan Bupati", imageSix, Colors.white, '/hukum'],
+    ["UU", imageOne, Colors.white, '/hukum'],
+    ["PP", imageTwo, Colors.white, '/hukum'],
+    ["PerPres", imageThree, Colors.white, '/hukum'],
+    ["PerMen", imageFour, Colors.white, '/hukum'],
+    ["PerGub", imageFive, Colors.white, '/hukum'],
+    ["PerBup", imageSix, Colors.white, '/hukum'],
   ];
 
   //
@@ -60,7 +60,7 @@ class _MyHomeState extends State<MyHome> {
                         color: Colors.blue,
                       ),
                       onPressed: () {
-                        Navigator.popAndPushNamed(context, "/uu");
+                        Navigator.popAndPushNamed(context, "/hukum/search");
                       },
                     ),
                   ],

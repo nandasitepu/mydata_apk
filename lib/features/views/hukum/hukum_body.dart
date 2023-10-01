@@ -1,37 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HukumBody extends StatelessWidget {
   const HukumBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 30.0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 30.0),
       child: Column(
         children: [
           ListTile(
-            leading: Icon(Icons.abc),
-            title: Text("Undang-Undang"),
-            subtitle: Row(
+            leading: const Icon(Icons.abc),
+            title: const Text("Undang-Undang"),
+            subtitle: const Row(
               children: [
                 Text("Total: "),
                 Text("19651"),
               ],
             ),
-            trailing: Icon(Icons.list_alt_outlined),
+            trailing: IconButton(
+              icon: const Icon(Icons.list_alt_outlined),
+              onPressed: () {
+                context.go('/hukum/index');
+              },
+            ),
           ),
           ListTile(
-            leading: Icon(Icons.abc),
-            title: Text("Peraturan Pemerintah"),
-            subtitle: Row(
+            leading: const Icon(Icons.abc),
+            title: const Text("Peraturan Pemerintah"),
+            subtitle: const Row(
               children: [
                 Text("Total: "),
                 Text("19651"),
               ],
             ),
-            trailing: Icon(Icons.list_alt_outlined),
+            trailing: IconButton(
+              icon: const Icon(Icons.list_alt_outlined),
+              onPressed: () {
+                context.go('/hukum/search');
+              },
+            ),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.abc),
             title: Text("Peraturan Presiden"),
             subtitle: Row(
@@ -42,7 +53,7 @@ class HukumBody extends StatelessWidget {
             ),
             trailing: Icon(Icons.list_alt_outlined),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.abc),
             title: Text("Peraturan Gubernur"),
             subtitle: Row(
@@ -53,7 +64,7 @@ class HukumBody extends StatelessWidget {
             ),
             trailing: Icon(Icons.list_alt_outlined),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.abc),
             title: Text("Peraturan Bupati"),
             subtitle: Row(

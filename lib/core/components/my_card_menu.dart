@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MyCardMenu extends StatelessWidget {
   final String menuTitle;
@@ -18,7 +19,7 @@ class MyCardMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.popAndPushNamed(context, link);
+        context.go(link);
       },
       child: Center(
         child: Column(
@@ -26,7 +27,7 @@ class MyCardMenu extends StatelessWidget {
             Expanded(
               child: Container(
                 margin: const EdgeInsets.all(5),
-                padding: const EdgeInsets.all(5),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   color: menuColor,
@@ -45,7 +46,7 @@ class MyCardMenu extends StatelessWidget {
             ),
             Container(
                 color: Colors.transparent,
-                height: 50,
+                // height: 50,
                 padding: const EdgeInsets.all(5),
                 child: Text(
                   menuTitle,
