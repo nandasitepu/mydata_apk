@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mydata_apk/features/controllers/auth/google_login_ctrl.dart';
 
@@ -23,7 +24,8 @@ class MyWelcome extends StatelessWidget {
           Text(user.displayName!),
           ElevatedButton(
             onPressed: () {
-              Navigator.popAndPushNamed(context, "/homepage");
+              // Navigator.popAndPushNamed(context, "/homepage");
+              context.go("/homepage");
             },
             child: const Text("Homepage"),
           ),
@@ -31,7 +33,7 @@ class MyWelcome extends StatelessWidget {
             onPressed: () async {
               await MyGogleSignIn.myLogout();
               if (context.mounted) {
-                Navigator.popAndPushNamed(context, "/loginpage");
+                context.go("/loginpage");
               }
             },
             child: const Text("Logout"),

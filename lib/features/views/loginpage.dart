@@ -8,7 +8,6 @@ import 'package:mydata_apk/core/components/my_button.dart';
 import 'package:mydata_apk/core/components/my_textfield.dart';
 import 'package:mydata_apk/core/constants.dart';
 import 'package:mydata_apk/features/controllers/auth/google_login_ctrl.dart';
-import 'package:mydata_apk/features/views/welcomepage.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:http/http.dart' as http;
 
@@ -36,8 +35,10 @@ class _MyLoginState extends State<MyLogin> {
       return SnackBar(content: Text("Sign In Failed"));
     } else {
       if (context.mounted) {
-        Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => MyWelcome(user: user)));
+        // Navigator.of(context).pushReplacement(
+        //     MaterialPageRoute(builder: (context) => MyWelcome(user: user)));
+
+        context.pushReplacement('/welcome', extra: user);
       }
     }
   }
