@@ -4,7 +4,8 @@ import 'package:mydata_apk/features/views/homepage.dart';
 import 'package:mydata_apk/features/views/hukum/hukum_index.dart';
 import 'package:mydata_apk/features/views/hukum/hukum_search.dart';
 import 'package:mydata_apk/features/views/hukum/my_hukum.dart';
-import 'package:mydata_apk/features/views/loginpage.dart';
+import 'package:mydata_apk/features/views/auth/loginpage.dart';
+import 'package:mydata_apk/features/views/users/profilepage.dart';
 import 'package:mydata_apk/features/views/welcomepage.dart';
 
 // named routes
@@ -15,25 +16,32 @@ final GoRouter router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
+      name: 'initialpage',
       builder: (context, state) => const MyLogin(),
     ),
     GoRoute(
       path: '/homepage',
+      name: 'homepage',
       builder: (context, state) => const Homepage(),
     ),
     GoRoute(
       path: '/hukum',
+      name: 'hukum',
       builder: (context, state) => const MyHukum(),
-    ),
-    GoRoute(
-      path: '/hukum/index',
-      builder: (context, state) => const HukumIndex(),
-    ),
-    GoRoute(
-      path: '/hukum/search',
-      builder: (context, state) => const MyHukumSearch(
-        appBarTitle: "Hukum Search",
-      ),
+      routes: [
+        GoRoute(
+          path: 'hukum/index',
+          name: 'hukum.index',
+          builder: (context, state) => const HukumIndex(),
+        ),
+        GoRoute(
+          path: 'hukum/search',
+          name: 'hukum.search',
+          builder: (context, state) => const MyHukumSearch(
+            appBarTitle: "Hukum Search",
+          ),
+        ),
+      ],
     ),
     GoRoute(
       path: '/logout',
@@ -51,6 +59,10 @@ final GoRouter router = GoRouter(
           user: user,
         );
       },
+    ),
+    GoRoute(
+      path: '/profile',
+      builder: (context, state) => const ProfilePage(),
     ),
   ],
 );

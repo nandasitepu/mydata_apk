@@ -22,7 +22,7 @@ class _MyPopUpMenuState extends State<MyPopUpMenu> {
         offset: const Offset(0, 50),
         itemBuilder: (context) => const [
               PopupMenuItem(
-                value: "/login",
+                value: "/profile",
                 child: Text(
                   "Profile",
                   style: TextStyle(color: Colors.white),

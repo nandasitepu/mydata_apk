@@ -1,6 +1,6 @@
 import 'package:google_sign_in/google_sign_in.dart';
 
-class MyGogleSignIn {
+class MyGoogleSignIn {
   static final _googleSignIn = GoogleSignIn();
   // Login
   static Future<GoogleSignInAccount?> mylogin() => _googleSignIn.signIn();

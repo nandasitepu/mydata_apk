@@ -91,8 +91,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   color: Colors.yellow,
                 ),
                 onTap: () {
-                  Navigator.of(context).pop();
-                  Navigator.popAndPushNamed(context, "/loginpage");
+                  context.go('/login');
                 },
               ),
             ),

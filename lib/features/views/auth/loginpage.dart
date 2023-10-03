@@ -8,8 +8,7 @@ import 'package:mydata_apk/core/components/my_button.dart';
 import 'package:mydata_apk/core/components/my_textfield.dart';
 import 'package:mydata_apk/core/constants.dart';
 import 'package:mydata_apk/features/controllers/auth/google_login_ctrl.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({super.key});
@@ -28,17 +27,18 @@ class _MyLoginState extends State<MyLogin> {
   }
 
   Future gSignIn() async {
-    await MyGogleSignIn.mylogin();
-    final user = await MyGogleSignIn.mylogin();
+    // await MyGoogleSignIn.mylogin();
+    final user = await MyGoogleSignIn.mylogin();
 
     if (user == null) {
       return SnackBar(content: Text("Sign In Failed"));
     } else {
       if (context.mounted) {
-        // Navigator.of(context).pushReplacement(
-        //     MaterialPageRoute(builder: (context) => MyWelcome(user: user)));
-
-        context.pushReplacement('/welcome', extra: user);
+        context.pushReplacement('/profile', extra: user);
+        SharedPreferences pref = await SharedPreferences.getInstance();
+        pref.setString("name", user.displayName.toString());
+        pref.setString("email", user.email.toString());
+        pref.setString("picture", user.photoUrl.toString());
       }
     }
   }

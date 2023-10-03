@@ -24,16 +24,15 @@ class MyWelcome extends StatelessWidget {
           Text(user.displayName!),
           ElevatedButton(
             onPressed: () {
-              // Navigator.popAndPushNamed(context, "/homepage");
               context.go("/homepage");
             },
             child: const Text("Homepage"),
           ),
           ElevatedButton(
             onPressed: () async {
-              await MyGogleSignIn.myLogout();
+              await MyGoogleSignIn.myLogout();
               if (context.mounted) {
-                context.go("/loginpage");
+                context.go("/login");
               }
             },
             child: const Text("Logout"),
