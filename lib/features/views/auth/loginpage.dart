@@ -1,7 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
-// import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mydata_apk/core/components/my_button.dart';
@@ -26,18 +22,29 @@ class _MyLoginState extends State<MyLogin> {
     context.go('/homepage');
   }
 
+  void register() async {
+    context.push('/register');
+  }
+
   Future gSignIn() async {
     // await MyGoogleSignIn.mylogin();
     final user = await MyGoogleSignIn.mylogin();
 
     if (user == null) {
-      return SnackBar(content: Text("Sign In Failed"));
+      return const SnackBar(content: Text("Sign In Failed"));
     } else {
+      // if (context.mounted) {
+      //   context.pushReplacement('/welcome', extra: user);
+      // }
       if (context.mounted) {
         context.pushReplacement('/profile', extra: user);
         SharedPreferences pref = await SharedPreferences.getInstance();
         pref.setString("name", user.displayName.toString());
         pref.setString("email", user.email.toString());
+        if (user.photoUrl == null) {
+          pref.setString("picture", noImageNetwork.toString());
+        }
+
         pref.setString("picture", user.photoUrl.toString());
       }
     }
@@ -49,7 +56,7 @@ class _MyLoginState extends State<MyLogin> {
       child: Scaffold(
         backgroundColor: Colors.blue,
         appBar: AppBar(
-          title: Center(child: Text("M Y - D A T A - ID")),
+          title: const Center(child: Text("M Y - D A T A - ID")),
           elevation: 0,
           backgroundColor: Colors.transparent,
         ),
@@ -78,7 +85,7 @@ class _MyLoginState extends State<MyLogin> {
                 controller: emailController,
                 hintText: 'E - mail',
                 obscureText: false,
-                prefixIcon: Icon(Icons.email),
+                prefixIcon: const Icon(Icons.email),
               ),
 
               const SizedBox(height: 10),
@@ -88,7 +95,7 @@ class _MyLoginState extends State<MyLogin> {
                 controller: passwordController,
                 hintText: 'Password',
                 obscureText: true,
-                prefixIcon: Icon(Icons.password),
+                prefixIcon: const Icon(Icons.password),
               ),
 
               const SizedBox(height: 20),
@@ -110,7 +117,9 @@ class _MyLoginState extends State<MyLogin> {
                     ),
                     Expanded(
                       child: MyButton(
-                        onTap: () {},
+                        onTap: () {
+                          register();
+                        },
                         backgroundColor: Colors.white70,
                         text: "Register",
                         fontSize: 16,
@@ -119,7 +128,7 @@ class _MyLoginState extends State<MyLogin> {
                   ],
                 ),
               ),
-              Divider(
+              const Divider(
                 thickness: 2,
                 height: 50,
                 color: Colors.white,
@@ -130,9 +139,9 @@ class _MyLoginState extends State<MyLogin> {
                     style:
                         ElevatedButton.styleFrom(backgroundColor: Colors.white),
                     onPressed: gSignIn,
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: const [
+                      children: [
                         Icon(
                           Icons.login_outlined,
                           color: Colors.red,

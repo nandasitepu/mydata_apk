@@ -17,3 +17,5 @@ var imageSix = 'lib/core/assets/images/cyberspace.png';
 
 // Images for References
 var imageLoginPage = 'lib/core/assets/images/cyberspace.png';
+var noImageNetwork = 'http://placehold.co/600x400/000000/FFFFFF.png';
+var noImageLocal = 'lib/core/assets/images/user.png';

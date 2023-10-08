@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:mydata_apk/features/views/auth/registerpage.dart';
 import 'package:mydata_apk/features/views/homepage.dart';
 import 'package:mydata_apk/features/views/hukum/hukum_index.dart';
 import 'package:mydata_apk/features/views/hukum/hukum_search.dart';
@@ -12,7 +13,7 @@ import 'package:mydata_apk/features/views/welcomepage.dart';
 
 final GoRouter router = GoRouter(
   initialLocation: "/",
-  debugLogDiagnostics: true,
+  debugLogDiagnostics: false,
   routes: [
     GoRoute(
       path: '/',
@@ -50,6 +51,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/login',
       builder: (context, state) => const MyLogin(),
+    ),
+    GoRoute(
+      path: '/register',
+      builder: (context, state) => const RegisterPage(),
     ),
     GoRoute(
       path: '/welcome',

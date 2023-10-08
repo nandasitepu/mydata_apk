@@ -3,9 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:mydata_apk/core/routes.dart';
 
-void main() {
-  // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // await sharedPrefs.init();
+
   runApp(MyData());
 }
 
@@ -22,3 +23,12 @@ class MyData extends StatelessWidget {
     );
   }
 }
+
+// class SharedPrefs {
+//   static SharedPreferences? _sharedPrefs;
+//   init() async {
+//     _sharedPrefs = await SharedPreferences.getInstance();
+//   }
+// }
+
+// final sharedPrefs = SharedPrefs();
