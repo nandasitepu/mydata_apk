@@ -29,7 +29,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   style: GoogleFonts.bebasNeue(fontSize: 32),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 50,
                 ),
                 MyTextField(
                   controller: usernameController,
@@ -62,7 +62,15 @@ class _RegisterPageState extends State<RegisterPage> {
                   padding: const EdgeInsets.all(20.0),
                   child: Row(
                     children: [
-                      const Icon(Icons.app_registration_rounded),
+                      Container(
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                          style: BorderStyle.solid,
+                          color: Colors.black,
+                        )),
+                        child: const Icon(Icons.app_registration_rounded),
+                      ),
                       const SizedBox(
                         width: 20,
                       ),
@@ -76,7 +84,13 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ],
                   ),
-                )
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    context.go('/login');
+                  },
+                  child: const Text("Back Home"),
+                ),
               ],
             ),
           ),

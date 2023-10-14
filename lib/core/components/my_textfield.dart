@@ -24,6 +24,14 @@ class MyTextField extends StatelessWidget {
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
+          floatingLabelBehavior: FloatingLabelBehavior.never,
+          labelStyle: const TextStyle(
+            color: Colors.black,
+            backgroundColor: Colors.white,
+            letterSpacing: 5,
+            fontWeight: FontWeight.bold,
+            fontSize: 14,
+          ),
           labelText: hintText,
           border: const OutlineInputBorder(
             borderSide: BorderSide(),
@@ -32,9 +40,11 @@ class MyTextField extends StatelessWidget {
             borderSide: BorderSide(color: Colors.black),
           ),
           focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.blue),
+            borderSide: BorderSide(color: Colors.black),
           ),
-          fillColor: Colors.grey.shade200,
+          focusColor: Colors.blue,
+          hoverColor: Colors.grey,
+          fillColor: Colors.white,
           filled: true,
           hintText: hintText,
           hintStyle: TextStyle(color: Colors.grey[500]),

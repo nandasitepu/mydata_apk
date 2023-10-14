@@ -31,12 +31,12 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const MyHukum(),
       routes: [
         GoRoute(
-          path: 'hukum/index',
+          path: 'index',
           name: 'hukum.index',
           builder: (context, state) => const HukumIndex(),
         ),
         GoRoute(
-          path: 'hukum/search',
+          path: 'search',
           name: 'hukum.search',
           builder: (context, state) => const MyHukumSearch(
             appBarTitle: "Hukum Search",

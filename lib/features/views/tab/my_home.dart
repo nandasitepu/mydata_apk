@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_element
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mydata_apk/core/components/my_card_menu.dart';
 import 'package:mydata_apk/core/components/my_card_populer.dart';
@@ -60,7 +61,8 @@ class _MyHomeState extends State<MyHome> {
                         color: Colors.blue,
                       ),
                       onPressed: () {
-                        Navigator.popAndPushNamed(context, "/hukum/search");
+                        // Navigator.popAndPushNamed(context, "/hukum/search");
+                        context.goNamed("hukum.search");
                       },
                     ),
                   ],
