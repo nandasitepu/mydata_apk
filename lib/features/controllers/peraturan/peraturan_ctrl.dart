@@ -9,8 +9,8 @@ Future getPeraturan() async {
   var url = "https://sheets.googleapis.com/v4/spreadsheets/";
   var sheetID = "1TO5XIJQ0x0hU0BXbqhdWB_JTJiwHHBV0MfHD5N7ssb4/";
   // part as pages
-  var part = "A2:E11";
-  var limit = 10;
+  var part = "A12:E21";
+  // var limit = 10;
   // range with pages
   var range = "values/$part";
   // key
@@ -20,7 +20,7 @@ Future getPeraturan() async {
   var jsonData = jsonDecode(response.body);
 
   //clear before get data
-  // peraturan.clear();
+  peraturan.clear();
 
   for (var p in jsonData['values']) {
     final data = Peraturan(

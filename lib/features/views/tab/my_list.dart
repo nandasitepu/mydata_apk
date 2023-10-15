@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:mydata_apk/core/components/my_card_list.dart';
+import 'package:mydata_apk/core/components/my_card_list2.dart';
 import 'package:mydata_apk/features/controllers/peraturan/peraturan_ctrl.dart';
+import 'package:pdf_view_app/pdfPage.dart';
 
-class MyList extends StatelessWidget {
+class MyList extends StatefulWidget {
   const MyList({super.key});
 
+  @override
+  State<MyList> createState() => _MyListState();
+}
+
+class _MyListState extends State<MyList> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -109,11 +115,37 @@ class MyList extends StatelessWidget {
                                   itemCount: peraturan.length,
                                   itemBuilder:
                                       (BuildContext context, int index) {
-                                    return MyCardList(
+                                    // return ListTile(
+                                    //   leading: Text(peraturan[index].id),
+                                    //   onTap: () async {
+                                    //     var url =
+                                    //         Uri.parse(peraturan[index].link);
+
+                                    //     // var url =
+                                    //     //     Uri.parse("https://www.google.com");
+
+                                    //     if (await canLaunchUrl(url)) {
+                                    //       await launchUrl(
+                                    //         url,
+                                    //         mode: LaunchMode.platformDefault,
+                                    //         webViewConfiguration:
+                                    //             const WebViewConfiguration(),
+                                    //       );
+                                    //     } else {
+                                    //       throw "Couldnt Launch $url";
+                                    //     }
+                                    //   },
+                                    // );
+                                    return MyCardList2(
                                       id: peraturan[index].id,
                                       nomor: peraturan[index].nomor,
                                       uraian: peraturan[index].uraian,
-                                      link: peraturan[index].link,
+                                      link: "PDF",
+                                      onPressed: () async {
+                                        // var url = Uri.parse(
+                                        //   "https://docs.gooogle.com/viewer?url=${peraturan[index].link}",
+                                        // );
+                                      },
                                     );
                                   }),
                             ),
