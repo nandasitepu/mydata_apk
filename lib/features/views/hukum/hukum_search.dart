@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mydata_apk/core/layouts/my_drawer.dart';
+import 'package:mydata_apk/core/components/layouts/my_drawer.dart';
 
-class MyHukumSearch extends StatelessWidget {
+class HukumSearch extends StatelessWidget {
   final String appBarTitle;
 
-  const MyHukumSearch({super.key, required this.appBarTitle});
+  const HukumSearch({super.key, required this.appBarTitle});
 
   @override
   Widget build(BuildContext context) {

@@ -19,16 +19,25 @@ class _MyDrawerState extends State<MyDrawer> {
         child: Column(
           children: [
             ListTile(
-              title: Text(
+              leading: Text(
                 "Menu",
                 style: GoogleFonts.bebasNeue(
                   fontSize: 36,
                   color: Colors.white,
                 ),
               ),
+              trailing: const Icon(
+                Icons.home,
+                size: 36,
+                color: Colors.yellow,
+              ),
               onTap: () {
-                context.go('/homepage');
+                context.goNamed('homepage');
               },
+            ),
+            const Divider(
+              thickness: 2,
+              color: Colors.white,
             ),
             ListTile(
               title: Text(
@@ -69,12 +78,9 @@ class _MyDrawerState extends State<MyDrawer> {
                 color: Colors.white,
               ),
             ),
-            const Align(
-              alignment: Alignment.bottomCenter,
-              child: Divider(
-                thickness: 2,
-                color: Colors.white,
-              ),
+            const Divider(
+              thickness: 2,
+              color: Colors.white,
             ),
             Align(
               alignment: Alignment.bottomCenter,
@@ -91,7 +97,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   color: Colors.yellow,
                 ),
                 onTap: () {
-                  context.go('/login');
+                  context.goNamed('login');
                 },
               ),
             ),

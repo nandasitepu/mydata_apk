@@ -26,12 +26,12 @@ class _MyHomeState extends State<MyHome> {
   }
 
   List cardMenu = [
-    ["UU", imageOne, Colors.white, '/hukum'],
-    ["PP", imageTwo, Colors.white, '/hukum'],
-    ["PerPres", imageThree, Colors.white, '/hukum'],
-    ["PerMen", imageFour, Colors.white, '/hukum'],
-    ["PerGub", imageFive, Colors.white, '/hukum'],
-    ["PerBup", imageSix, Colors.white, '/hukum'],
+    ["Konsultasi", imageOne, Colors.white, 'hukum'],
+    ["Layanan", imageTwo, Colors.white, 'hukum.index'],
+    ["Institusi", imageThree, Colors.white, 'hukum.search'],
+    ["Kasus", imageFour, Colors.white, 'hukum.institusi'],
+    ["Peraturan", imageFive, Colors.white, 'hukum.peraturan'],
+    ["Advokat", imageSix, Colors.white, 'hukum.kasus'],
   ];
 
   //
@@ -48,7 +48,7 @@ class _MyHomeState extends State<MyHome> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      " Peraturan Hukum Indonesia ",
+                      " Layanan | Advokat | Peraturan | Institusi ... ",
                       style: GoogleFonts.agdasima(
                         fontSize: 20,
                       ),

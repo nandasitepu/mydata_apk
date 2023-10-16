@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mydata_apk/core/components/my_card_list2.dart';
-import 'package:mydata_apk/features/controllers/peraturan/peraturan_ctrl.dart';
-import 'package:pdf_view_app/pdfPage.dart';
+import 'package:mydata_apk/features/controllers/hukum/peraturan_ctrl.dart';
 
 class MyList extends StatefulWidget {
   const MyList({super.key});
@@ -115,36 +114,29 @@ class _MyListState extends State<MyList> {
                                   itemCount: peraturan.length,
                                   itemBuilder:
                                       (BuildContext context, int index) {
-                                    // return ListTile(
-                                    //   leading: Text(peraturan[index].id),
-                                    //   onTap: () async {
-                                    //     var url =
-                                    //         Uri.parse(peraturan[index].link);
-
-                                    //     // var url =
-                                    //     //     Uri.parse("https://www.google.com");
-
-                                    //     if (await canLaunchUrl(url)) {
-                                    //       await launchUrl(
-                                    //         url,
-                                    //         mode: LaunchMode.platformDefault,
-                                    //         webViewConfiguration:
-                                    //             const WebViewConfiguration(),
-                                    //       );
-                                    //     } else {
-                                    //       throw "Couldnt Launch $url";
-                                    //     }
-                                    //   },
-                                    // );
                                     return MyCardList2(
                                       id: peraturan[index].id,
                                       nomor: peraturan[index].nomor,
                                       uraian: peraturan[index].uraian,
                                       link: "PDF",
-                                      onPressed: () async {
-                                        // var url = Uri.parse(
-                                        //   "https://docs.gooogle.com/viewer?url=${peraturan[index].link}",
-                                        // );
+                                      onPressed: () {
+                                        // context.goNamed("hukum.detail");
+                                        var url = Uri.parse(
+                                          "https://docs.gooogle.com/viewer?url=${peraturan[index].link}",
+                                        );
+                                        launchUrl(url);
+                                        // // try catch
+
+                                        // if (await canLaunchUrl(url)) {
+                                        //   await launchUrl(
+                                        //     url,
+                                        //     mode: LaunchMode.platformDefault,
+                                        //     webViewConfiguration:
+                                        //         const WebViewConfiguration(),
+                                        //   );
+                                        // } else {
+                                        //   throw "Couldnt Launch $url";
+                                        // }
                                       },
                                     );
                                   }),

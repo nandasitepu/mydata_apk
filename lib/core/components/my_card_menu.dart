@@ -19,7 +19,7 @@ class MyCardMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.go(link);
+        context.goNamed(link);
       },
       child: Center(
         child: Column(

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mydata_apk/core/components/my_popupmenu.dart';
-
 import 'package:mydata_apk/features/views/homepage.dart';
 
 class MyAppBar extends StatelessWidget {
-  final Widget text;
+  final Widget title;
 
-  const MyAppBar({super.key, required this.text});
+  const MyAppBar({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,7 @@ class MyAppBar extends StatelessWidget {
         MyPopUpMenu(),
       ],
       title: Center(
-        child: text,
+        child: title,
       ),
       elevation: 0,
     );

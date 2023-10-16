@@ -33,3 +33,9 @@ Future getPeraturan() async {
     peraturan.add(data);
   }
 }
+
+Future launchUrl(Uri url) async {
+  if (!await launchUrl(url)) {
+    throw Exception('Could not launch $url');
+  }
+}
