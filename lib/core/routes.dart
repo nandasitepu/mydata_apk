@@ -7,7 +7,7 @@ import 'package:mydata_apk/features/views/hukum/peraturan/peraturan_home.dart';
 
 import 'package:mydata_apk/features/views/hukum/peraturan/peraturan_index.dart';
 import 'package:mydata_apk/features/views/hukum/hukum_search.dart';
-import 'package:mydata_apk/features/views/hukum/institusi/institusi_index.dart';
+import 'package:mydata_apk/features/views/hukum/institusi/institusi_home.dart';
 import 'package:mydata_apk/features/views/hukum/hukum_home.dart';
 import 'package:mydata_apk/features/views/auth/loginpage.dart';
 import 'package:mydata_apk/features/views/users/profilepage.dart';
@@ -41,7 +41,7 @@ final GoRouter router = GoRouter(
                 builder: (context, state) => const PeraturanHome(),
                 routes: [
                   GoRoute(
-                    path: ':name',
+                    path: 'jenis/:name',
                     name: 'peraturan.index',
                     builder: (context, state) => PeraturanIndex(
                       name: state.pathParameters["name"]!,
@@ -57,8 +57,8 @@ final GoRouter router = GoRouter(
               //Institusi
               GoRoute(
                 path: 'institusi',
-                name: 'hukum.institusi',
-                builder: (context, state) => const HukumInstitusi(),
+                name: 'institusi',
+                builder: (context, state) => const InstitusiHome(),
               ),
               // Search
               GoRoute(

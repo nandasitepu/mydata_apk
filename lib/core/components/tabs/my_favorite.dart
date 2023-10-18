@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mydata_apk/core/components/my_card_populer.dart';
+import 'package:mydata_apk/core/components/utilities/my_card_populer.dart';
 
 class MyFavorite extends StatelessWidget {
   const MyFavorite({super.key});

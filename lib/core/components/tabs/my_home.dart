@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mydata_apk/core/components/my_card_menu.dart';
-import 'package:mydata_apk/core/components/my_card_populer.dart';
+import 'package:mydata_apk/core/components/utilities/my_card_menu.dart';
+import 'package:mydata_apk/core/components/utilities/my_card_populer.dart';
 import 'package:mydata_apk/core/constants.dart';
 
 // import 'package:shared_preferences/shared_preferences.dart';
@@ -27,11 +27,11 @@ class _MyHomeState extends State<MyHome> {
 
   List cardMenu = [
     ["Konsultasi", imageOne, Colors.white, 'hukum'],
-    ["Layanan", imageTwo, Colors.white, 'hukum.index'],
-    ["Institusi", imageThree, Colors.white, 'hukum.search'],
-    ["Kasus", imageFour, Colors.white, 'hukum.institusi'],
-    ["Peraturan", imageFive, Colors.white, 'hukum.peraturan'],
-    ["Advokat", imageSix, Colors.white, 'hukum.kasus'],
+    ["Layanan", imageTwo, Colors.white, 'hukum'],
+    ["Institusi", imageThree, Colors.white, 'hukum'],
+    ["Kasus", imageFour, Colors.white, 'hukum'],
+    ["Peraturan", imageFive, Colors.white, 'peraturan'],
+    ["Advokat", imageSix, Colors.white, 'hukum'],
   ];
 
   //

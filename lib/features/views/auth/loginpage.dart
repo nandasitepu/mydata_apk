@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mydata_apk/core/components/my_button.dart';
-import 'package:mydata_apk/core/components/my_textfield.dart';
+import 'package:mydata_apk/core/components/utilities/my_button.dart';
+import 'package:mydata_apk/core/components/utilities/my_textfield.dart';
 import 'package:mydata_apk/core/constants.dart';
 import 'package:mydata_apk/features/controllers/auth/google_login_ctrl.dart';
 import 'package:shared_preferences/shared_preferences.dart';

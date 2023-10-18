@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mydata_apk/core/components/my_card_list2.dart';
+import 'package:mydata_apk/core/components/utilities/my_card_list2.dart';
 import 'package:mydata_apk/features/controllers/hukum/peraturan_ctrl.dart';
 
 class MyList extends StatefulWidget {
@@ -89,77 +89,95 @@ class _MyListState extends State<MyList> {
               thickness: 1,
               color: Colors.blue,
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ElevatedButton(
+                  onPressed: () => prevPage(),
+                  child: const Text("Prev"),
+                ),
+                ElevatedButton(
+                  onPressed: () => nextPage(),
+                  child: const Text("Next"),
+                ),
+              ],
+            ),
+            const Divider(
+              thickness: 1,
+              color: Colors.blue,
+            ),
             Expanded(
               child: TabBarView(children: [
                 // Refresh Button
 
                 // UU View
-                FutureBuilder(
-                    future: getPeraturan(),
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.done) {
-                        return Column(
-                          children: [
-                            Expanded(
-                              child: ListView.separated(
-                                  separatorBuilder:
-                                      (BuildContext context, int index) {
-                                    return const Divider(
-                                      height: 10,
-                                      thickness: 1,
-                                      color: Colors.blue,
-                                    );
-                                  },
-                                  reverse: false,
-                                  itemCount: peraturan.length,
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return MyCardList2(
-                                      id: peraturan[index].id,
-                                      nomor: peraturan[index].nomor,
-                                      uraian: peraturan[index].uraian,
-                                      link: "PDF",
-                                      onPressed: () {
-                                        // context.goNamed("hukum.detail");
-                                        var url = Uri.parse(
-                                          "https://docs.gooogle.com/viewer?url=${peraturan[index].link}",
-                                        );
-                                        launchUrl(url);
-                                        // // try catch
 
-                                        // if (await canLaunchUrl(url)) {
-                                        //   await launchUrl(
-                                        //     url,
-                                        //     mode: LaunchMode.platformDefault,
-                                        //     webViewConfiguration:
-                                        //         const WebViewConfiguration(),
-                                        //   );
-                                        // } else {
-                                        //   throw "Couldnt Launch $url";
-                                        // }
-                                      },
-                                    );
-                                  }),
-                            ),
-                          ],
-                        );
-                      } else {
-                        return const Center(
-                          child: Center(
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.all(30.0),
-                                  child: CircularProgressIndicator(),
-                                ),
-                                SizedBox(height: 40),
-                                Expanded(child: Text("Loading Data")),
-                              ],
-                            ),
+                FutureBuilder(
+                  future: getPeraturan(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      return Column(
+                        children: [
+                          Expanded(
+                            child: ListView.separated(
+                                separatorBuilder:
+                                    (BuildContext context, int index) {
+                                  return const Divider(
+                                    height: 10,
+                                    thickness: 1,
+                                    color: Colors.blue,
+                                  );
+                                },
+                                reverse: false,
+                                itemCount: peraturan.length,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return MyCardList2(
+                                    id: peraturan[index].id,
+                                    nomor: peraturan[index].nomor,
+                                    uraian: peraturan[index].uraian,
+                                    link: "PDF",
+                                    onPressed: () {
+                                      // context.goNamed("hukum.detail");
+                                      var url = Uri.parse(
+                                        "https://docs.gooogle.com/viewer?url=${peraturan[index].link}",
+                                      );
+                                      launchUrl(url);
+                                      // // try catch
+
+                                      // if (await canLaunchUrl(url)) {
+                                      //   await launchUrl(
+                                      //     url,
+                                      //     mode: LaunchMode.platformDefault,
+                                      //     webViewConfiguration:
+                                      //         const WebViewConfiguration(),
+                                      //   );
+                                      // } else {
+                                      //   throw "Couldnt Launch $url";
+                                      // }
+                                    },
+                                  );
+                                }),
                           ),
-                        );
-                      }
-                    }),
+                        ],
+                      );
+                    } else {
+                      return const Center(
+                        child: Center(
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(30.0),
+                                child: CircularProgressIndicator(),
+                              ),
+                              SizedBox(height: 40),
+                              Expanded(child: Text("Loading Data")),
+                            ],
+                          ),
+                        ),
+                      );
+                    }
+                  },
+                ),
 
                 const Center(
                   child: Text("Two"),

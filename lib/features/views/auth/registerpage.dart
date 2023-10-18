@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mydata_apk/core/components/my_textfield.dart';
+import 'package:mydata_apk/core/components/utilities/my_textfield.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});

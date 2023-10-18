@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MyPopUpMenu extends StatefulWidget {
   const MyPopUpMenu({super.key});
@@ -20,17 +21,18 @@ class _MyPopUpMenuState extends State<MyPopUpMenu> {
           color: Colors.white,
         ),
         offset: const Offset(0, 50),
-        itemBuilder: (context) => const [
-              PopupMenuItem(
-                value: "/profile",
+        itemBuilder: (context) => [
+              const PopupMenuItem(
+                value: "profile",
                 child: Text(
                   "Profile",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
               PopupMenuItem(
-                value: "/logout",
-                child: Text(
+                value: "logout",
+                onTap: () => logout(),
+                child: const Text(
                   "Logout",
                   style: TextStyle(color: Colors.white),
                 ),
@@ -40,7 +42,13 @@ class _MyPopUpMenuState extends State<MyPopUpMenu> {
           setState(() {
             selectedMenu = value;
           });
-          context.go(value);
+          context.pop();
+          context.goNamed(value);
         });
   }
+}
+
+void logout() async {
+  SharedPreferences pref = await SharedPreferences.getInstance();
+  await pref.clear();
 }

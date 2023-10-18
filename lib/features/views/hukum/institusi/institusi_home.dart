@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HukumInstitusi extends StatelessWidget {
-  const HukumInstitusi({super.key});
+class InstitusiHome extends StatelessWidget {
+  const InstitusiHome({super.key});
 
   @override
   Widget build(BuildContext context) {
