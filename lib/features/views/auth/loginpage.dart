@@ -1,9 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mydata_apk/core/components/utilities/my_button.dart';
 import 'package:mydata_apk/core/components/utilities/my_textfield.dart';
 import 'package:mydata_apk/core/constants.dart';
 import 'package:mydata_apk/features/controllers/auth/google_login_ctrl.dart';
+import 'package:http/http.dart' as http;
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyLogin extends StatefulWidget {
@@ -19,8 +23,36 @@ class _MyLoginState extends State<MyLogin> {
   final passwordController = TextEditingController();
 
   void login() async {
-    context.go('/homepage');
+    if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
+      var response = await http.post(Uri.parse("https://reqres.in/api/login"),
+          body: ({
+            "email": emailController.text,
+            "password": passwordController.text,
+          }));
+      if (response.statusCode == 200) {
+        final body = jsonDecode(response.body);
+        if (!context.mounted) return;
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text("Token: ${body['token']}")));
+
+        SharedPreferences pref = await SharedPreferences.getInstance();
+        await pref.setString("login", body['token']);
+        if (!context.mounted) return;
+        context.pushReplacementNamed('profile');
+      } else {
+        if (!context.mounted) return;
+        ScaffoldMessenger.of(context)
+            .showSnackBar(const SnackBar(content: Text("Invalid Credetials")));
+      }
+    } else {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text("Blank Value Form")));
+    }
   }
+
+  // void login() async {
+  //   context.go('/homepage');
+  // }
 
   void register() async {
     context.push('/register');
@@ -33,9 +65,6 @@ class _MyLoginState extends State<MyLogin> {
     if (user == null) {
       return const SnackBar(content: Text("Sign In Failed"));
     } else {
-      // if (context.mounted) {
-      //   context.pushReplacement('/welcome', extra: user);
-      // }
       if (context.mounted) {
         context.pushReplacement('/profile', extra: user);
         SharedPreferences pref = await SharedPreferences.getInstance();
