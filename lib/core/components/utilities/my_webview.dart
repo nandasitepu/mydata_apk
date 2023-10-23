@@ -20,6 +20,8 @@ class _MyWebViewState extends State<MyWebView> {
     ..setJavaScriptMode(JavaScriptMode.disabled)
     ..loadRequest(Uri.parse("http://www.google.com"));
 
+  var text;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
