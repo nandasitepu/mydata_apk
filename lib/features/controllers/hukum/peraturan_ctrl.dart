@@ -39,12 +39,6 @@ Future getPeraturan() async {
   }
 }
 
-Future launchUrl(Uri url) async {
-  if (!await launchUrl(url)) {
-    throw Exception('Could not launch $url');
-  }
-}
-
 Future nextPage() async {
   count = 10;
   getPeraturan();

@@ -48,7 +48,7 @@ class _MyHomeState extends State<MyHome> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      " Layanan | Advokat | Peraturan | Institusi ... ",
+                      " Layanan | Advokat ...",
                       style: GoogleFonts.agdasima(
                         fontSize: 20,
                       ),

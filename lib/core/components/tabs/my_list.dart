@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mydata_apk/core/components/utilities/my_card_list2.dart';
+import 'package:mydata_apk/core/components/utilities/my_webview.dart';
 import 'package:mydata_apk/features/controllers/hukum/peraturan_ctrl.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class MyList extends StatefulWidget {
   const MyList({super.key});
@@ -135,24 +138,13 @@ class _MyListState extends State<MyList> {
                                     id: peraturan[index].id,
                                     nomor: peraturan[index].nomor,
                                     uraian: peraturan[index].uraian,
-                                    link: "PDF",
-                                    onPressed: () {
-                                      // context.goNamed("hukum.detail");
-                                      var url = Uri.parse(
-                                        "https://docs.gooogle.com/viewer?url=${peraturan[index].link}",
-                                      );
-                                      launchUrl(url);
-                                      // // try catch
-
-                                      // if (await canLaunchUrl(url)) {
-                                      //   await launchUrl(
-                                      //     url,
-                                      //     mode: LaunchMode.platformDefault,
-                                      //     webViewConfiguration:
-                                      //         const WebViewConfiguration(),
-                                      //   );
-                                      // } else {
-                                      //   throw "Couldnt Launch $url";
+                                    onPressed: () async {
+                                      // var url = Uri.parse(
+                                      //   "https://docs.gooogle.com/viewer?url=${peraturan[index].link}",
+                                      // );
+                                      // if (!await launchUrl(url)) {
+                                      //   throw Exception(
+                                      //       'Could not launch $url');
                                       // }
                                     },
                                   );
@@ -180,11 +172,17 @@ class _MyListState extends State<MyList> {
                 ),
 
                 const Center(
-                  child: Text("Two"),
+                  child: ElevatedButton(
+                    onPressed: _launchUrl,
+                    child: Text("PDF"),
+                  ),
                 ),
-                const Center(
-                  child: Text("Three"),
-                ),
+                Center(
+                    child: MyWebView(
+                  url: "http://www.google.com",
+                  text: "MyWebView",
+                )),
+
                 const Center(
                   child: Text("Four"),
                 ),
@@ -200,5 +198,13 @@ class _MyListState extends State<MyList> {
         ),
       ),
     );
+  }
+}
+
+final Uri _url = Uri.parse('https://flutter.dev');
+
+Future<void> _launchUrl() async {
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
   }
 }

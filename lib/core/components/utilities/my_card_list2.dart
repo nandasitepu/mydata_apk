@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyCardList2 extends StatelessWidget {
-  final String id, nomor, uraian, link;
+  final String id, nomor, uraian;
   final dynamic onPressed;
 
   const MyCardList2({
@@ -10,7 +10,7 @@ class MyCardList2 extends StatelessWidget {
     required this.id,
     required this.nomor,
     required this.uraian,
-    required this.link,
+    // required this.link,
     required this.onPressed,
   });
 
@@ -73,8 +73,8 @@ class MyCardList2 extends StatelessWidget {
             onPressed: () {
               onPressed;
             },
-            child: Text(
-              link,
+            child: const Text(
+              "PDF",
               textAlign: TextAlign.start,
             ),
           )
