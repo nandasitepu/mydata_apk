@@ -37,7 +37,10 @@ class _MyLoginState extends State<MyLogin> {
 
   //       SharedPreferences pref = await SharedPreferences.getInstance();
   //       await pref.setString("login", body['token']);
+<<<<<<< HEAD
   //       await pref.setBool("isLoggedIn", true);
+=======
+>>>>>>> 152c9f5457c1d71e8853d03eb74e1827df01e66f
   //       if (!context.mounted) return;
   //       context.pushReplacementNamed('profile');
   //     } else {

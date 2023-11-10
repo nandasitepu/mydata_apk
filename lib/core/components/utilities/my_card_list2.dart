@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyCardList2 extends StatelessWidget {
-  final String id, nomor, uraian, link;
+  final String id, nomor, uraian;
   final dynamic onPressed;
 
   const MyCardList2({
@@ -10,7 +10,7 @@ class MyCardList2 extends StatelessWidget {
     required this.id,
     required this.nomor,
     required this.uraian,
-    required this.link,
+    // required this.link,
     required this.onPressed,
   });
 
@@ -69,6 +69,7 @@ class MyCardList2 extends StatelessWidget {
           ),
 
           // File
+<<<<<<< HEAD
           Container(
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black, style: BorderStyle.none),
@@ -80,6 +81,15 @@ class MyCardList2 extends StatelessWidget {
                   spreadRadius: 1,
                 )
               ],
+=======
+          ElevatedButton(
+            onPressed: () {
+              onPressed;
+            },
+            child: const Text(
+              "PDF",
+              textAlign: TextAlign.start,
+>>>>>>> 152c9f5457c1d71e8853d03eb74e1827df01e66f
             ),
             child: IconButton(
               onPressed: () {
