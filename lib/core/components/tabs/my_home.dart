@@ -47,13 +47,14 @@ class _MyHomeState extends State<MyHome> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      " Layanan | Advokat | Peraturan | Institusi ... ",
-                      style: GoogleFonts.agdasima(
-                        fontSize: 20,
+                    Expanded(
+                      child: Text(
+                        " Layanan | Advokat | Peraturan | Institusi ... ",
+                        style: GoogleFonts.agdasima(
+                          fontSize: 20,
+                        ),
                       ),
                     ),
-                    Spacer(),
                     IconButton(
                       icon: Icon(
                         Icons.search_outlined,

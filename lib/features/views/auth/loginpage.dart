@@ -22,40 +22,41 @@ class _MyLoginState extends State<MyLogin> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void login() async {
-    if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
-      var response = await http.post(Uri.parse("https://reqres.in/api/login"),
-          body: ({
-            "email": emailController.text,
-            "password": passwordController.text,
-          }));
-      if (response.statusCode == 200) {
-        final body = jsonDecode(response.body);
-        if (!context.mounted) return;
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text("Token: ${body['token']}")));
-
-        SharedPreferences pref = await SharedPreferences.getInstance();
-        await pref.setString("login", body['token']);
-        if (!context.mounted) return;
-        context.pushReplacementNamed('profile');
-      } else {
-        if (!context.mounted) return;
-        ScaffoldMessenger.of(context)
-            .showSnackBar(const SnackBar(content: Text("Invalid Credetials")));
-      }
-    } else {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: Text("Blank Value Form")));
-    }
-  }
-
   // void login() async {
-  //   context.go('/homepage');
+  //   if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
+  //     var response = await http.post(Uri.parse("https://reqres.in/api/login"),
+  //         body: ({
+  //           "email": emailController.text,
+  //           "password": passwordController.text,
+  //         }));
+  //     if (response.statusCode == 200) {
+  //       final body = jsonDecode(response.body);
+  //       if (!context.mounted) return;
+  //       ScaffoldMessenger.of(context)
+  //           .showSnackBar(SnackBar(content: Text("Token: ${body['token']}")));
+
+  //       SharedPreferences pref = await SharedPreferences.getInstance();
+  //       await pref.setString("login", body['token']);
+  //       await pref.setBool("isLoggedIn", true);
+  //       if (!context.mounted) return;
+  //       context.pushReplacementNamed('profile');
+  //     } else {
+  //       if (!context.mounted) return;
+  //       ScaffoldMessenger.of(context)
+  //           .showSnackBar(const SnackBar(content: Text("Invalid Credetials")));
+  //     }
+  //   } else {
+  //     ScaffoldMessenger.of(context)
+  //         .showSnackBar(const SnackBar(content: Text("Blank Value Form")));
+  //   }
   // }
 
+  void login() async {
+    context.go('/homepage');
+  }
+
   void register() async {
-    context.push('/register');
+    context.go('/register');
   }
 
   Future gSignIn() async {
@@ -70,6 +71,7 @@ class _MyLoginState extends State<MyLogin> {
         SharedPreferences pref = await SharedPreferences.getInstance();
         pref.setString("name", user.displayName.toString());
         pref.setString("email", user.email.toString());
+        pref.setBool("isLoggedIn", true);
         if (user.photoUrl == null) {
           pref.setString("picture", noImageNetwork.toString());
         }
@@ -165,8 +167,9 @@ class _MyLoginState extends State<MyLogin> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 100),
                 child: ElevatedButton(
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: Colors.white),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                    ),
                     onPressed: gSignIn,
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

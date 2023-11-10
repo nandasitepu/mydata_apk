@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BPKPLogin extends StatelessWidget {
-  const BPKPLogin({super.key});
+class OnBoardingPage extends StatelessWidget {
+  const OnBoardingPage({super.key});
 
   @override
   Widget build(BuildContext context) {

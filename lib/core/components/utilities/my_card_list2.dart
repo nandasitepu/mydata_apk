@@ -64,20 +64,34 @@ class MyCardList2 extends StatelessWidget {
             textAlign: TextAlign.left,
             style: GoogleFonts.openSans(fontSize: 14),
           ),
-          const Divider(
-            thickness: 1,
-            color: Colors.black,
+          const SizedBox(
+            height: 20,
           ),
+
           // File
-          ElevatedButton(
-            onPressed: () {
-              onPressed;
-            },
-            child: Text(
-              link,
-              textAlign: TextAlign.start,
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, style: BorderStyle.none),
+              color: Colors.white,
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.grey,
+                  blurRadius: 1,
+                  spreadRadius: 1,
+                )
+              ],
             ),
-          )
+            child: IconButton(
+              onPressed: () {
+                print("Clicked");
+              },
+              icon: const Icon(
+                Icons.picture_as_pdf,
+                color: Colors.blueGrey,
+              ),
+              alignment: Alignment.centerRight,
+            ),
+          ),
 
           //
         ],

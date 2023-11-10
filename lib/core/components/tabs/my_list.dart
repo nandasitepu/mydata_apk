@@ -89,23 +89,23 @@ class _MyListState extends State<MyList> {
               thickness: 1,
               color: Colors.blue,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                ElevatedButton(
-                  onPressed: () => prevPage(),
-                  child: const Text("Prev"),
-                ),
-                ElevatedButton(
-                  onPressed: () => nextPage(),
-                  child: const Text("Next"),
-                ),
-              ],
-            ),
-            const Divider(
-              thickness: 1,
-              color: Colors.blue,
-            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //   children: [
+            //     ElevatedButton(
+            //       onPressed: () => prevPage(),
+            //       child: const Text("Prev"),
+            //     ),
+            //     ElevatedButton(
+            //       onPressed: () => nextPage(),
+            //       child: const Text("Next"),
+            //     ),
+            //   ],
+            // ),
+            // const Divider(
+            //   thickness: 1,
+            //   color: Colors.blue,
+            // ),
             Expanded(
               child: TabBarView(children: [
                 // Refresh Button
